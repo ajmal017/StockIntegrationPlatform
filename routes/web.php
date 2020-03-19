@@ -22,13 +22,14 @@ Route::post('/product/cart_total/upload/{id}', 'FrontController@total_cart_uploa
 Route::post('/product/cart_total/delete/{id}', 'FrontController@total_cart_delete');
 Route::get('/product/cart_checkout', 'FrontController@cart_checkout');
 
-
 Route::get('/ecpay/notify', 'FrontController@sendOrder');
 
 
 
 Route::get('/contact', 'FrontController@contact');
 Route::post('/contact', 'FrontController@contact_form');
+
+Route::get('/test', 'PythonController@test5');
 
 
 Auth::routes();

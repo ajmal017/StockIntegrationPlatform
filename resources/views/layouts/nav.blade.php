@@ -24,6 +24,7 @@
     <link rel="preload" as="style" href="/assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="/assets/mobirise/css/mbr-additional.css" type="text/css">
 
+
     {!! ReCaptcha::htmlScriptTagJsApi() !!}
     @yield('css')
 </head>

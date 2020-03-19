@@ -138,7 +138,7 @@
         </div>
     </div>
     @endforeach
-    <a href="/product/cart" class="btn  btn-info" >前往結帳</a>
+    <a href="/product/cart_checkout" class="btn  btn-info" >前往結帳</a>
 </div>
 
 @endsection
