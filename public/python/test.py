@@ -10,10 +10,13 @@ import time
 import yfinance as yf
 import json
 
+import sys
+
 yf.pdr_override() # <== that's all it takes :-)
 
 # download dataframe
-data = pdr.get_data_yahoo("2330.TW", start="2019-06-01", end="2019-12-31")
+data = pdr.get_data_yahoo(sys.argv[1], start=sys.argv[2], end=sys.argv[3])
+# data = pdr.get_data_yahoo(sys.arg[0], start="2019-12-01", end="2019-12-31")
 
 
 #時間
@@ -24,7 +27,6 @@ time2=time.strftime('%d %b %Y %H:%M')
 time2=time2+' Z'
 
 time22=list(time2)
-
 
 data_time=time22
 data_open=data['Open'].values.tolist()
@@ -46,3 +48,4 @@ stockprice_dict = {
 
 stockprice_dict2 = json.dumps(stockprice_dict)
 print(stockprice_dict2)
+
