@@ -63,6 +63,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                     <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="/stock">
+                            <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                            智能投資
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link link text-white display-4" href="/news">
                             <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
                             最新消息
@@ -107,12 +113,7 @@
 
 
 
-    <section class="cid-qTkAaeaxX5" id="footer1-2">
-
-
-
-
-
+    {{-- <section class="cid-qTkAaeaxX5" id="footer1-2">
         <div class="container">
             <div class="media-container-row content text-white">
                 <div class="col-12 col-md-3">
@@ -203,7 +204,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     <script src="/assets/web/assets/jquery/jquery.min.js"></script>

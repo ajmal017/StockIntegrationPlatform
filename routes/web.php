@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'FrontController@index');
 Route::get('/news', 'FrontController@news');
 Route::get('/news/{id}', 'FrontController@news_detail');
@@ -29,7 +28,12 @@ Route::get('/ecpay/notify', 'FrontController@sendOrder');
 Route::get('/contact', 'FrontController@contact');
 Route::post('/contact', 'FrontController@contact_form');
 
-Route::get('/test', 'PythonController@test5');
+
+Route::get('/stock', 'PythonController@stock');
+Route::post('/stock_store', 'PythonController@stock_store');
+
+Route::get('/bband', 'PythonController@bband'); //布林通道
+
 
 
 Auth::routes();

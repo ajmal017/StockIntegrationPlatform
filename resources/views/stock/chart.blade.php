@@ -15,14 +15,14 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 @endsection
 @section('js')
     <script>
-         var res = {!! json_encode($data) !!};
+        var res = {!! json_encode($data) !!};
 
-         var data = [];
-         var open = res.Open;
+        var data = [];
+        var open = res.Open;
         var close = res.Close;
         var high = res.High;
-		var low = res.Low;
-		var time = res.time;
+        var low = res.Low;
+        var time = res.time;
 
          time.forEach((element, index) => {
             var date = luxon.DateTime.fromRFC2822(element);
