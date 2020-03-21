@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.navbar {
+  background-color: #252d59;
+}
+
+.navbar .toggle {
+  padding: 12px 30px;
+}
+
+.navbar .btn-L {
+  padding: 10px 0px;
+}
+
+.navbar .btn-L button {
+  font-weight: 200;
+  font-size: 28px;
+}
+
+.navbar .btn-L img {
+  width: 35px;
+  height: 35px;
+}
+
+.navbar .btn-R {
+  padding: 10px 55px;
+}
+
+.navbar .btn-R button {
+  font-weight: 200;
+  font-size: 28px;
+}
+
+.color6 {
+  background-color: #64a0a5;
+}
+
+.color7 {
+  background-color: #515972;
+}
+
+.color8 {
+  background-color: #566b97;
+}
+
+.color9 {
+  background-color: #688eaa;
+}
+
+.color10 {
+  background-color: #1b433e;
+}
+
+.color11 {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.textW {
+  color: white;
+}
+
+.textB {
+  color: #1b433e;
+}
+
+.borderB {
+  border-bottom: solid #1b433e;
+}
+
+.borderR {
+  border-radius: 5px;
+}
+
+.container {
+  background-color: gainsboro;
+}
+
+.container .row .tab-all {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.container .row .tab-all button {
+  width: 100%;
+  height: 45px;
+  background-color: #64a0a5;
+  color: white;
+  border-radius: 5px;
+}
+
+.container .row .title-data {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.container .row .title-data span {
+  color: white;
+  height: 45px;
+  border-radius: 5px;
+}
+
+.container .row .data {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.container .row .data span {
+  height: 45px;
+  margin-bottom: 15px;
+}
+
+.container .row .content {
+  width: 100%;
+  margin-bottom: 192px;
+}
+
+.container .row .content span {
+  height: 500px;
+  background-color: white;
+}
+

@@ -7,42 +7,73 @@ body {
   font-family: "Noto Sans TC", sans-serif;
 }
 
-.navbar {
-  background-color: #069292;
+.color1 {
+  background-color: #252d59;
 }
 
-.navbar .navbar-toggler {
-  padding: 13px 0;
+.color2 {
+  background-color: #566b97;
+}
+
+.color3 {
+  background-color: #ffffff;
+}
+
+.color4 {
+  background-color: #000000;
+}
+
+.color5 {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar {
+  background-color: #252d59;
+}
+
+.navbar .toggle {
+  padding: 12px 30px;
+}
+
+.navbar .btn-L {
+  padding: 10px 0px;
 }
 
 .navbar .btn-L button {
   font-weight: 200;
+  font-size: 28px;
 }
 
-.navbar .btn-L .btn img {
-  width: 40px;
-  height: 40px;
+.navbar .btn-L img {
+  width: 35px;
+  height: 35px;
+}
+
+.navbar .btn-R {
+  padding: 10px 55px;
 }
 
 .navbar .btn-R button {
   font-weight: 200;
+  font-size: 28px;
 }
 
 .container-all {
   width: 100%;
-  height: calc(100vh - 74px);
-  background-image: url("/img/img2.jpg");
+  height: calc(100vh - 64px);
+  background-image: url(/images/img2.jpg?c2243fcaaee84c2159988a0ac8254a41);
   background-size: cover;
   background-position: center;
 }
 
 .container-all .search-box {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 50px;
 }
 
 .container-all .search-box h1 {
   font-weight: 600;
+  font-size: 55px;
 }
 
 .container-all .search-box h3 {
@@ -51,45 +82,42 @@ body {
 
 .container-all .search-box .form-group ::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.6);
-  font-weight: 100;
 }
 
 .container-all .search-box .form-group ::-moz-placeholder {
   color: rgba(255, 255, 255, 0.6);
-  font-weight: 100;
 }
 
 .container-all .search-box .form-group :-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.6);
-  font-weight: 100;
 }
 
 .container-all .search-box .form-group ::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.6);
-  font-weight: 100;
 }
 
 .container-all .search-box .form-group ::placeholder {
   color: rgba(255, 255, 255, 0.6);
-  font-weight: 100;
 }
 
 .container-all .search-box .form-group .search-form {
-  height: 65px;
+  height: 64px;
   border-radius: 30px 0px 0px 30px;
-  background-color: #069292;
+  background-color: #566b97;
   color: white;
-  padding-left: calc(50% - 30px);
+  padding-left: calc(50% - 40px);
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .container-all .search-box .form-group .btn {
   border-radius: 0px 30px 30px 0px;
-  background-color: #069292;
+  background-color: #566b97;
 }
 
 .container-all .search-box .form-group .btn svg {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   fill: white;
 }
 
