@@ -17,48 +17,11 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
     <script>
         var res = {!! json_encode($data) !!};
 
-        var data =[]
-        var open = res.Open;
-        var close = res.Close;
-        var high = res.High;
-        var low = res.Low;
-        var time = res.time;
 
-
-
-
-        // res.forEach((element,index) => {
-        //     newDate = luxon.DateTime.fromRFC2822(element.time)
-        //     res[index].time = newDate.valueOf()
-        // });
-        // console.log(res)
-         time.forEach((element, index) => {
-            var date = luxon.DateTime.fromRFC2822(element);
-            data[index] =
-            {
-                t: date.valueOf(),
-            };
+        res.forEach((element,index) => {
+            newDate = luxon.DateTime.fromRFC2822(element.t)
+            res[index].t = newDate.valueOf()
         });
-
-        open.forEach((element, index) => {
-            data[index].o = `${element}`;
-
-        });
-
-		high.forEach((element, index) => {
-            data[index].h = `${element}`;
-		});
-
-		low.forEach((element, index) => {
-            data[index].l = `${element}`;
-        });
-
-
-        close.forEach((element, index) => {
-            data[index].c = `${element}`;
-
-        });
-        console.log(data)
 
         var ctx = document.getElementById('chart').getContext('2d');
         ctx.canvas.width = 1000;
@@ -70,7 +33,7 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
                 datasets: [{
 
                     label: '蠟燭圖',
-                    data: data
+                    data: res
                 }]
             },
 

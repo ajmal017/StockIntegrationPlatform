@@ -35,6 +35,10 @@ Route::post('/stock_store', 'PythonController@stock_store');
 Route::get('/bband', 'PythonController@bband'); //布林通道
 
 
+//發財通道
+Route::get('/BBands', 'PythonController@BBands');
+
+
 
 Auth::routes();
 

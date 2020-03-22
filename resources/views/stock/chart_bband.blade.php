@@ -1,7 +1,8 @@
 @extends('layouts/nav')
 @section('css')
 <script
-src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign"></script>
+    src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign">
+</script>
 <script src="https://cdn.jsdelivr.net/npm/luxon@1.19.3"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@0.2.0"></script>
@@ -16,10 +17,10 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
         max-width: 90%;
         max-height: 400px;
     }
-    #myChart{
+
+    #myChart {
         background-color: #eee;
     }
-
 </style>
 @endsection
 @section('content')
@@ -28,14 +29,14 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 </div> --}}
 <div class="myChartDiv">
     <canvas id="myChart" width="600" height="400"></canvas>
-  </div>
+</div>
 
 
 @endsection
 @section('js')
 
-    <script>
-        var res = {!! json_encode($data) !!};
+<script>
+    var res = {!! json_encode($data) !!};
 
         var data = [];
         var time = res.time;
@@ -43,110 +44,52 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
         var upBBand = res.upBBand;
         var midBBand = res.midBBand;
         var downBBand = res.downBBand;
-
-
-
-        //  time.forEach((element, index) => {
-        //     var date = luxon.DateTime.fromRFC2822(element);
-        //     data[index] =
-        //     {
-        //         t: date.valueOf(),
-        //     };
-        // });
-
-        // open.forEach((element, index) => {
-        //     data[index].o = `${element}`;
-
-        // });
-
-		// high.forEach((element, index) => {
-        //     data[index].h = `${element}`;
-		// });
-
-		// low.forEach((element, index) => {
-        //     data[index].l = `${element}`;
-        // });
-
-
-        // close.forEach((element, index) => {
-        //     data[index].c = `${element}`;
-
-        // });
-
-
-        // var ctx = document.getElementById('chart').getContext('2d');
-        // ctx.canvas.width = 1000;
-        // ctx.canvas.height = 250;
-        // var chart = new Chart(ctx, {
-        //     type: 'candlestick',
-        //     data: {
-        //         datasets: [{
-        //             label: 'CHRT - Chart.js Corporation',
-        //             data: data
-        //         }]
-        //     },
-
-        // });
-
-        // var ctx = document.getElementById('chart').getContext('2d');
-        // ctx.canvas.width = 1000;
-        // ctx.canvas.height = 250;
-        // var mixedChart = new Chart(ctx, {
-        //     type: 'line',
-        //     data: {
-        //         datasets: [{
-        //             label: 'upBBand Dataset',
-        //             data: [10, 20, 30, 40],
-        //             // this dataset is drawn below
-        //             order: 1
-        //         }, {
-        //             label: 'midBBand Dataset',
-        //             data: [10, 10, 10, 10],
-        //             type: 'line',
-        //             // this dataset is drawn on top
-        //             order: 2
-        //         }, {
-        //             label: 'downBBand Dataset',
-        //             data: [10, 10, 10, 10],
-        //             type: 'line',
-        //             // this dataset is drawn on top
-        //             order: 3
-        //         }],
-        //         labels: ['January', 'February', 'March', 'April']
-        //     },
-        //     options: options
-        // });
-
+        var x = [];
+        time.forEach((element,index) => {
+            x[index] = index;
+        });
+        console.log();
 
         var ctx = document.getElementById("myChart");
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                        datasets: [{
-                            label: 'upBBand Dataset',
-                            data: upBBand,
-                            // this dataset is drawn below
-                            order: 1
-                        }, {
-                            label: 'midBBand Dataset',
-                            data: midBBand,
-                            type: 'line',
-                            // this dataset is drawn on top
-                            order: 2
-                        }, {
-                            label: 'downBBand Dataset',
-                            data: downBBand,
-                            type: 'line',
-                            // this dataset is drawn on top
-                            order: 3
-                        }, {
-                            label: 'close Dataset',
-                            data: close,
-                            type: 'line',
-                            // this dataset is drawn on top
-                            order: 4
-                        }],
-                        labels: time
+                datasets: [
+                    {
+                        label: '上軌',
+                        data: upBBand,
+                        type: 'line',
+                        fill:false,
+                        labels: x,
+                        pointRadius: 0,
+
+                    },
+                    {
+                        label: '中軌',
+                        data: midBBand,
+                        type: 'line',
+                        labels: x,
+                        fill:false,
+                        pointRadius: 0,
+                    },
+                    {
+                        label: '下軌',
+                        data: downBBand,
+                        type: 'line',
+                        labels: x,
+                        fill:false,
+                        pointRadius: 0,
+                    },
+                    {
+                        label: '收盤價',
+                        data: close,
+                        type: 'line',
+                        fill:false,
+                        pointRadius: 0,
+                    }
+                ],
+
+                labels: x
             },
             options: {
                 scales: {
@@ -186,5 +129,5 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 
 
 
-    </script>
+</script>
 @endsection

@@ -34,8 +34,7 @@
 
 
 
-        <nav
-            class="navbar navbar-expand beta-menu align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <nav class="navbar navbar-expand beta-menu align-items-center navbar-fixed-top navbar-toggleable-sm">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -226,6 +225,8 @@
     <script src="/assets/gallery/script.js"></script>
     <script src="/assets/formoid/formoid.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     @yield('js')
 
 </body>

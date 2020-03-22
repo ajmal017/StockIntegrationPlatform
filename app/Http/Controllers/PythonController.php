@@ -69,6 +69,32 @@ class PythonController extends Controller
         return view('stock/chart_bband',compact('data'));
     }
 
+    public function test()
+    {
 
+        $jsondata= shell_exec("python python/test_v1.py");
+
+        $st_word = stripos($jsondata, "completed") + 9;
+
+        $data = json_decode(substr($jsondata, $st_word));
+
+
+        return view('stock/test', compact('data'));
+    }
+
+    public function BBands()
+    {
+
+        $jsondata= shell_exec("python python/bband_finaltest.py");
+
+        $st_word = stripos($jsondata, "completed") + 9;
+
+        $data = json_decode(substr($jsondata, $st_word));
+
+
+
+        return view('stock/BBands', compact('data'));
+
+    }
 
 }

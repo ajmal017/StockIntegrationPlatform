@@ -1,39 +1,24 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 20 10:43:26 2020
-
-@author: User
-"""
-
-
 from pandas_datareader import data as pdr
 import yfinance as yf
-
-
 import pandas as pd
 import numpy as np
 import json
 
-yf.pdr_override() # <== that's all it takes :-)
+yf.pdr_override()
+data = pdr.get_data_yahoo("2330.TW", start="2020-01-01", end="2020-03-18")
 
-# download dataframe
-data = pdr.get_data_yahoo("2330.TW", start="2019-01-01", end="2020-3-21")
 
-###############################################結束
-##向上突破函數
-#upbreakBB2=upbreak(data.Close,tsmcBBands.downBBand)
 def upbreak(tsLine,tsRefLine):
-    #tsLine=data.Close[data.Close.index[20:][0]:]#tsLine=Close[boundDC.index[0]:]
-    #tsRefLine=boundDC.upboundDC#
+
     n=min(len(tsLine),len(tsRefLine))
     tsLine=tsLine[-n:]
-    tsRefLine=tsRefLine[-n:]#倒倏第N個
+    tsRefLine=tsRefLine[-n:]
     signal=pd.Series(0,index=tsLine.index)
     for i in range(1,len(tsLine)):
         if all([tsLine[i]>tsRefLine[i],tsLine[i-1]<tsRefLine[i-1]]):
             signal[i]=1
     return(signal)
-##向下突破函數
+
 def downbreak(tsLine,tsRefLine):
     n=min(len(tsLine),len(tsRefLine))
     tsLine=tsLine[-n:]
@@ -44,7 +29,7 @@ def downbreak(tsLine,tsRefLine):
             signal[i]=1
     return(signal)
 
-#################布林通道
+
 def bbands(tsPrice,period=20,times=2):
     upBBand=pd.Series(0.0,index=tsPrice.index)
     midBBand=pd.Series(0.0,index=tsPrice.index)
