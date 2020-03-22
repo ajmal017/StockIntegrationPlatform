@@ -2,20 +2,20 @@
 
 
 .navbar {
-    background-color: $colour1;
+    background-color: $color1;
     height: 64px;
-  
+
     .navbar-nav {
       padding: 0 30px;
-  
-  
+
+
       .logo {
         margin: 0 35px;
         padding: 0 10px;
         position: relative;
         font-weight: 200;
         font-size: $text3;
-  
+
         &::before {
           position: absolute;
           content: "";
@@ -28,4 +28,4 @@
         }
       }
     }
-  }
+}

@@ -2,7 +2,7 @@
 
 // tab-all
 .container {
-  background-color: $colour10;
+  background-color: $color10;
 
   .main-btn {
     @include MarginHigth();
@@ -10,7 +10,7 @@
     .Cube {
       border: 0;
       font-size: $text3;
-      @include Cube($text3, $colour6, $colour3);
+      @include Cube($text3, $color6, $color3);
     }
   }
 
@@ -19,7 +19,7 @@
       .company {
         .Cube {
           font-size: $text3;
-          @include Cube($text3, $colour7, $colour3);
+          @include Cube($text3, $color7, $color3);
         }
       }
 
@@ -27,7 +27,7 @@
         @include MarginHigth();
         .title-Cube {
           font-size: $text3;
-          @include Cube($text3, $colour2, $colour3);
+          @include Cube($text3, $color2, $color3);
         }
       }
 
@@ -37,7 +37,7 @@
 
           .Cube {
             font-size: $text4;
-            @include Cube($text3, $colour8, $colour3);
+            @include Cube($text3, $color8, $color3);
           }
         }
 
@@ -70,10 +70,9 @@
       .company-title {
         @include MarginHigth();
         .Cube {
-          font-size: $text3;
-          @include Cube($text3, $colour2, $colour3);
           input {
-            @include Cube($text3, $colour2, $colour3);
+            font-size: $text3;
+            @include Cube($text3, $color2, $color3);
             border: 0;
           }
         }

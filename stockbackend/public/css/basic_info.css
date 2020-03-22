@@ -101,18 +101,8 @@ body {
   padding: 30px 0;
 }
 
-.container #content #historical-stock-content .company-title .Cube {
-  font-size: 28px;
-  width: 100%;
-  padding: 7px 0;
-  text-align: center;
-  line-height: 28px;
-  background-color: #566b97;
-  border-radius: 5px;
-  color: #ffffff;
-}
-
 .container #content #historical-stock-content .company-title .Cube input {
+  font-size: 28px;
   width: 100%;
   padding: 7px 0;
   text-align: center;

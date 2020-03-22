@@ -406,7 +406,7 @@
         </div>
 
         <div id="news-content">
-            <table id="example" class="table table-striped table-bordered " style="width:100%">
+            <table id="news-data" class="table table-striped table-bordered " style="width:100%">
                 <thead>
                     <tr>
                         <th>日期</th>
@@ -562,7 +562,7 @@
         </div>
 
         <div id="historical-stock-content">
-            <div class="row company-title d-flex justify-content-center">
+            <form class="row company-title d-flex justify-content-center" action="">
                 <div class="col-3">
                     <div class="Cube">
                         <input type="date">
@@ -573,7 +573,7 @@
                         <input type="date">
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </main>
 
@@ -587,26 +587,26 @@
 @section('js')
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script src="{{asset("../js/historical-stock.js")}}"></script>
 <script>
     $(document).ready(function () {
-            $('#example').DataTable({
-                "language": {
-                    "lengthMenu": "顯示 _MENU_ 比資料",
-                    "zeroRecords": "抱歉 找不到此筆資料",
-                    "info": "目前第 _PAGE_ 頁 總共 _PAGES_ 頁",
-                    "infoEmpty": "",
-                    "infoFiltered": "",
-                    "search": "搜索 :",
-                    "paginate": {
-                        "first": "First",
-                        "last": "Last",
-                        "next": "下一頁",
-                        "previous": "上一頁",
-                    },
-
+        $('#news-data').DataTable({
+            "language": {
+                "lengthMenu": "顯示 _MENU_ 比資料",
+                "zeroRecords": "抱歉 找不到此筆資料",
+                "info": "目前第 _PAGE_ 頁 總共 _PAGES_ 頁",
+                "infoEmpty": "",
+                "infoFiltered": "",
+                "search": "搜索 :",
+                "paginate": {
+                    "first": "First",
+                    "last": "Last",
+                    "next": "下一頁",
+                    "previous": "上一頁",
                 },
-            });
+            },
         });
+    });
 
     $('#basic-information').click( function (){
         $('#basic-information-content').css("display","block");
@@ -619,10 +619,11 @@
         $('#historical-stock-content').css("display","none");
     });
     $('#historical-stock').click( function (){
-        console.log("aaa");
         $('#basic-information-content').css("display","none");
         $('#news-content').css("display","none");
         $('#historical-stock-content').css("display","block");
     });
+
+
 </script>
 @endsection

@@ -49665,17 +49665,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/history.scss":
-/*!*************************************!*\
-  !*** ./resources/sass/history.scss ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'C:\\Users\\Brian\\Documents\\GitHub\\StockIntegrationPlatform\\stockbackend\\resources\\sass\\history.scss'\n    at runLoaders (C:\\Users\\Brian\\Documents\\GitHub\\StockIntegrationPlatform\\stockbackend\\node_modules\\webpack\\lib\\NormalModule.js:316:20)\n    at C:\\Users\\Brian\\Documents\\GitHub\\StockIntegrationPlatform\\stockbackend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Users\\Brian\\Documents\\GitHub\\StockIntegrationPlatform\\stockbackend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:203:19\n    at process.nextTick (C:\\Users\\Brian\\Documents\\GitHub\\StockIntegrationPlatform\\stockbackend\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:85:15)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
-
-/***/ }),
-
 /***/ "./resources/sass/index.scss":
 /*!***********************************!*\
   !*** ./resources/sass/index.scss ***!
@@ -49698,21 +49687,10 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
 
 /***/ }),
 
-/***/ "./resources/sass/news.scss":
-/*!**********************************!*\
-  !*** ./resources/sass/news.scss ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'C:\\Users\\Brian\\Documents\\GitHub\\StockIntegrationPlatform\\stockbackend\\resources\\sass\\news.scss'\n    at runLoaders (C:\\Users\\Brian\\Documents\\GitHub\\StockIntegrationPlatform\\stockbackend\\node_modules\\webpack\\lib\\NormalModule.js:316:20)\n    at C:\\Users\\Brian\\Documents\\GitHub\\StockIntegrationPlatform\\stockbackend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Users\\Brian\\Documents\\GitHub\\StockIntegrationPlatform\\stockbackend\\node_modules\\loader-runner\\lib\\LoaderRunner.js:203:19\n    at process.nextTick (C:\\Users\\Brian\\Documents\\GitHub\\StockIntegrationPlatform\\stockbackend\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:85:15)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
-
-/***/ }),
-
 /***/ 0:
-/*!*************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/index.scss ./resources/sass/basic_info.scss ./resources/sass/news.scss ./resources/sass/history.scss ***!
-  \*************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/nav.scss ./resources/sass/index.scss ./resources/sass/basic_info.scss ***!
+  \****************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49720,9 +49698,7 @@ __webpack_require__(/*! C:\Users\Brian\Documents\GitHub\StockIntegrationPlatform
 __webpack_require__(/*! C:\Users\Brian\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! C:\Users\Brian\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\nav.scss */"./resources/sass/nav.scss");
 __webpack_require__(/*! C:\Users\Brian\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\index.scss */"./resources/sass/index.scss");
-__webpack_require__(/*! C:\Users\Brian\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\basic_info.scss */"./resources/sass/basic_info.scss");
-__webpack_require__(/*! C:\Users\Brian\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\news.scss */"./resources/sass/news.scss");
-module.exports = __webpack_require__(/*! C:\Users\Brian\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\history.scss */"./resources/sass/history.scss");
+module.exports = __webpack_require__(/*! C:\Users\Brian\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\basic_info.scss */"./resources/sass/basic_info.scss");
 
 
 /***/ })

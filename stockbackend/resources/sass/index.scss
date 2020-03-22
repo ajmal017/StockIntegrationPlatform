@@ -14,7 +14,7 @@
 
   .search-box {
     width: 100%;
-    background-color: $colour5;
+    background-color: $color5;
     border-radius: $radius;
 
     h1 {
@@ -45,13 +45,13 @@
       ::placeholder {
         font-size: $text3;
         text-align:center;
-        color: $colour5;
+        color: $color5;
       }
       .search-form {
         height: 64px;
         border-radius: 30px;
-        background-color: $colour2;
-        color: $colour3;
+        background-color: $color2;
+        color: $color3;
         font-size: $text5;
         font-weight: 300;
       }
