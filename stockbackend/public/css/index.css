@@ -3,59 +3,8 @@ body {
 }
 
 * {
-  box-sizing: border-box;
-  font-family: "Noto Sans TC", sans-serif;
-}
-
-.color1 {
-  background-color: #252d59;
-}
-
-.color2 {
-  background-color: #566b97;
-}
-
-.color3 {
-  background-color: #ffffff;
-}
-
-.color4 {
-  background-color: #000000;
-}
-
-.color5 {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.navbar {
-  background-color: #252d59;
-}
-
-.navbar .toggle {
-  padding: 12px 30px;
-}
-
-.navbar .btn-L {
-  padding: 10px 0px;
-}
-
-.navbar .btn-L button {
-  font-weight: 200;
-  font-size: 28px;
-}
-
-.navbar .btn-L img {
-  width: 35px;
-  height: 35px;
-}
-
-.navbar .btn-R {
-  padding: 10px 55px;
-}
-
-.navbar .btn-R button {
-  font-weight: 200;
-  font-size: 28px;
+  font-family: "Noto Serif TC", serif;
+  word-wrap: break-word;
 }
 
 .container-all {
@@ -67,57 +16,81 @@ body {
 }
 
 .container-all .search-box {
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 50px;
+  border-radius: 5px;
 }
 
 .container-all .search-box h1 {
+  padding: 30px 0;
   font-weight: 600;
-  font-size: 55px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 75px;
 }
 
 .container-all .search-box h3 {
   font-weight: 400;
+  text-align: center;
+  font-size: 38px;
+}
+
+.container-all .search-box .form-group {
+  margin: 30px 0;
+  position: relative;
+}
+
+.container-all .search-box .form-group::after {
+  position: absolute;
+  content: "";
+  top: 16px;
+  right: 34px;
+  background-image: url(/images/loupe.svg?6460d345796bbaf3cb166bc2fb1db7a0);
+  width: 25px;
+  height: 25px;
 }
 
 .container-all .search-box .form-group ::-webkit-input-placeholder {
+  font-size: 28px;
+  text-align: center;
   color: rgba(255, 255, 255, 0.6);
 }
 
 .container-all .search-box .form-group ::-moz-placeholder {
+  font-size: 28px;
+  text-align: center;
   color: rgba(255, 255, 255, 0.6);
 }
 
 .container-all .search-box .form-group :-ms-input-placeholder {
+  font-size: 28px;
+  text-align: center;
   color: rgba(255, 255, 255, 0.6);
 }
 
 .container-all .search-box .form-group ::-ms-input-placeholder {
+  font-size: 28px;
+  text-align: center;
   color: rgba(255, 255, 255, 0.6);
 }
 
 .container-all .search-box .form-group ::placeholder {
+  font-size: 28px;
+  text-align: center;
   color: rgba(255, 255, 255, 0.6);
 }
 
 .container-all .search-box .form-group .search-form {
   height: 64px;
-  border-radius: 30px 0px 0px 30px;
+  border-radius: 30px;
   background-color: #566b97;
-  color: white;
-  padding-left: calc(50% - 40px);
+  color: #ffffff;
   font-size: 20px;
   font-weight: 300;
 }
 
-.container-all .search-box .form-group .btn {
-  border-radius: 0px 30px 30px 0px;
-  background-color: #566b97;
-}
-
-.container-all .search-box .form-group .btn svg {
-  width: 25px;
-  height: 25px;
-  fill: white;
+.container-all .search-box span {
+  font-size: 20px;
+  font-weight: 500;
 }
 

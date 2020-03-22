@@ -3,116 +3,123 @@ body {
 }
 
 * {
-  box-sizing: border-box;
-  font-family: "Noto Sans TC", sans-serif;
-}
-
-.navbar {
-  background-color: #252d59;
-}
-
-.navbar .toggle {
-  padding: 12px 30px;
-}
-
-.navbar .btn-L {
-  padding: 10px 0px;
-}
-
-.navbar .btn-L button {
-  font-weight: 200;
-  font-size: 28px;
-}
-
-.navbar .btn-L img {
-  width: 35px;
-  height: 35px;
-}
-
-.navbar .btn-R {
-  padding: 10px 55px;
-}
-
-.navbar .btn-R button {
-  font-weight: 200;
-  font-size: 28px;
-}
-
-.color6 {
-  background-color: #64a0a5;
-}
-
-.color7 {
-  background-color: #515972;
-}
-
-.color8 {
-  background-color: #566b97;
-}
-
-.color9 {
-  background-color: #688eaa;
-}
-
-.color10 {
-  background-color: #1b433e;
-}
-
-.color11 {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.textW {
-  color: white;
-}
-
-.textB {
-  color: #1b433e;
-}
-
-.borderB {
-  border-bottom: solid #1b433e;
-}
-
-.borderR {
-  border-radius: 5px;
+  font-family: "Noto Serif TC", serif;
+  word-wrap: break-word;
 }
 
 .container {
-  background-color: gainsboro;
+  background-color: rgba(229, 229, 229, 0.9);
 }
 
-.container .row .tab-all {
-  width: 100%;
-  margin: 30px 0;
+.container .main-btn {
+  padding: 30px 0;
 }
 
-.container .row .tab-all button {
+.container .main-btn .Cube {
+  border: 0;
+  font-size: 28px;
   width: 100%;
-  height: 45px;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 28px;
   background-color: #64a0a5;
-  color: white;
   border-radius: 5px;
+  color: #ffffff;
 }
 
-.container .row .title-data {
+.container #content #basic-information-content .company .Cube {
+  font-size: 28px;
   width: 100%;
-  margin-bottom: 30px;
-}
-
-.container .row .title-data span {
-  color: white;
-  height: 45px;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 28px;
+  background-color: #515972;
   border-radius: 5px;
+  color: #ffffff;
 }
 
-.container .row .data {
+.container #content #basic-information-content .company-title {
+  padding: 30px 0;
+}
+
+.container #content #basic-information-content .company-title .title-Cube {
+  font-size: 28px;
   width: 100%;
-  margin-bottom: 15px;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 28px;
+  background-color: #566b97;
+  border-radius: 5px;
+  color: #ffffff;
 }
 
-.container .row .data span {
-  height: 45px;
-  margin-bottom: 15px;
+.container #content #basic-information-content .content .company-SubTitle {
+  padding: 0 15px 15px 15px;
+}
+
+.container #content #basic-information-content .content .company-SubTitle .Cube {
+  font-size: 24px;
+  width: 100%;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 28px;
+  background-color: #688eaa;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.container #content #basic-information-content .content .company-content .Cube {
+  font-size: 20px;
+  width: 100%;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 20px;
+  color: #1b433e;
+  border-bottom: solid 2px #1b433e;
+}
+
+.container #content #news-content {
+  display: none;
+}
+
+.container #content #news-content #example .Cube {
+  border: 0;
+  font-size: 20px;
+}
+
+.container #content #news-content #example .Cube-content {
+  border: 0;
+  font-size: 20px;
+  text-align: unset;
+}
+
+.container #content #historical-stock-content {
+  display: none;
+}
+
+.container #content #historical-stock-content .company-title {
+  padding: 30px 0;
+}
+
+.container #content #historical-stock-content .company-title .Cube {
+  font-size: 28px;
+  width: 100%;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 28px;
+  background-color: #566b97;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.container #content #historical-stock-content .company-title .Cube input {
+  width: 100%;
+  padding: 7px 0;
+  text-align: center;
+  line-height: 28px;
+  background-color: #566b97;
+  border-radius: 5px;
+  color: #ffffff;
+  border: 0;
 }
 

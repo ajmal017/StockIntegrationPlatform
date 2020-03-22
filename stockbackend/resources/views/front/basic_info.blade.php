@@ -1,247 +1,628 @@
 @extends('layouts/nav')
 
 @section('css')
-
-<link rel="stylesheet" href="{{asset('css/basic_info.css')}}">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="{{asset("../css/basic_info.css")}}">
 @endsection
 
 @section('content')
-
 <section class="container">
 
-    <div class="row">
-        <!-- tab-all -->
-        <div class="tab-all d-flex">
-            <div class="col-3">
-                <a href="/basic_info"><button type="button" class="btn">基本資料</button></a>
-            </div>
-            <div class="col-3">
-                <a href="/news"><button type="button" class="btn">新聞</button></a>
-            </div>
-            <div class="col-3">
-                <a href="/history"><button type="button" class="btn">歷史股價</button></a>
-            </div>
-            <div class="col-3">
-                <button type="button" class="btn">回測</button>
-            </div>
+
+    <!-- tab-all -->
+    <div class="row main-btn ">
+        <div class="col-3 ">
+            <button id="basic-information" type="button" class="Cube">基本資料</button>
         </div>
-
-        <!-- 公司資料 -->
-        <div class="title-data">
-            <div class="col-12">
-                <span class=" d-flex justify-content-center align-items-center color7">
-                    公司資料
-                </span>
-            </div>
+        <div class="col-3 ">
+            <button id="news" type="button" class="Cube">新聞</button>
         </div>
-
-        <!-- 基本資料,股東會及最近一年配股 -->
-        <div class="title-data d-flex">
-            <div class="col-6">
-                <span class="d-flex justify-content-center align-items-center color8">基本資料</span>
-            </div>
-            <div class="col-6">
-                <span class="d-flex justify-content-center align-items-center color8">股東會及最近一年配股</span>
-            </div>
+        <div class="col-3 ">
+            <button id="historical-stock" type="button" class="Cube">歷史股價</button>
         </div>
-
-        <!-- 內容 -->
-        <div class="data d-flex flex-wrap">
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">產業類別</span>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center textB borderB">半導體  </span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">現金股利</span>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center textB borderB">9.50元</span>
-            </div>
-            <!--  -->
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">成立時間</span>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center textB borderB">76/02/21</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">股東會日期</span>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-            <!--  -->
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">上市(櫃)時間</span>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center textB borderB">83/09/05</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">公積配股</span>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-
-            <!--  -->
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">董事長</span>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center textB borderB">劉德音</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">盈餘配股</span>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-
-            <!--  -->
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">總 經 理</span>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center textB borderB">魏哲家</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">股票股利</span>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center textB borderB">109/06/09</span>
-            </div>
-            <!--  -->
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">營收比重</span>
-            </div>
-            <div class="col-8">
-                <span class="d-flex justify-content-center align-items-center textB borderB">晶圓86.67%、其他13.33% (2019年)</span>
-            </div>
-        </div>
-
-        <!-- 最新一季獲利能力 -->
-        <div class="title-data d-flex">
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center color8">最新一季獲利能力</span>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center color8">最新四季每股盈餘</span>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-center align-items-center color8">最近四年每股盈餘</span>
-            </div>
-        </div>
-
-        <!-- 內容 -->
-        <div class="data d-flex flex-wrap">
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">營業毛利率</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">50.50%</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">第1季</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">107年</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-
-            <!--  -->
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">營業利益率</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">第2季</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">106年</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-
-            <!--  -->
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">稅前淨利率</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">第3季</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">105年</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-
-            <!--  -->
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">資產報酬率</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">第4季</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">104年</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">-</span>
-            </div>
-        </div>
-
-        <!-- 除 權 息 資 料 -->
-        <div class="title-data d-flex">
-            <div class="col-8">
-                <span class="d-flex justify-content-center align-items-center color8">除 權 息 資 料</span>
-            </div>
-        </div>
-
-        <!-- 內容 -->
-        <div class="data d-flex flex-wrap">
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">除權日期</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">109/06/09</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center color9 textW borderR">除息日期</span>
-            </div>
-            <div class="col-2">
-                <span class="d-flex justify-content-center align-items-center textB borderB">109/06/09</span>
-            </div>
+        <div class="col-3 ">
+            <button id="analysis" type="button" class="Cube">回測</button>
         </div>
     </div>
 
+
+    <main id="content">
+
+        <div id="basic-information-content">
+            <!-- 公司資料 -->
+            <div class="row company">
+                <div class="col-12">
+                    <div class="Cube">
+                        <span>
+                            公司資料
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 基本資料,股東會及最近一年配股 -->
+
+            <div class="row ">
+
+                {{-- 副標 --}}
+                <div class="col-6">
+                    <div class="row company-title">
+                        <div class="col-12">
+                            <div class="title-Cube">
+                                <span>基本資料</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- 內容 --}}
+                    <div class="row content">
+                        <div class="col-4 company-SubTitle">
+                            <div class="Cube">
+                                <span>產業類別</span>
+                            </div>
+                        </div>
+                        <div class="col-8 company-content">
+                            <div class="Cube">
+                                <span>晶圓廠</span>
+                            </div>
+                        </div>
+                        <div class="col-4 company-SubTitle">
+                            <div class="Cube">
+                                <span>成立時間</span>
+                            </div>
+                        </div>
+                        <div class="col-8 company-content">
+                            <div class="Cube">
+                                <span>76/02/21</span>
+                            </div>
+                        </div>
+                        <div class="col-4 company-SubTitle">
+                            <div class="Cube">
+                                <span>上市(櫃)時間</span>
+                            </div>
+                        </div>
+                        <div class="col-8 company-content">
+                            <div class="Cube">
+                                <span>83/09/05</span>
+                            </div>
+                        </div>
+                        <div class="col-4 company-SubTitle">
+                            <div class="Cube">
+                                <span>董事長</span>
+                            </div>
+                        </div>
+                        <div class="col-8 company-content">
+                            <div class="Cube">
+                                <span>劉德音</span>
+                            </div>
+                        </div>
+                        <div class="col-4 company-SubTitle">
+                            <div class="Cube">
+                                <span>總 經 理</span>
+                            </div>
+                        </div>
+                        <div class="col-8 company-content">
+                            <div class="Cube">
+                                <span>魏哲家</span>
+                            </div>
+                        </div>
+                        <div class="col-4  company-SubTitle">
+                            <div class="Cube">
+                                <span>營收比重</span>
+                            </div>
+                        </div>
+                        <div class="col-8 company-content">
+                            <div class="Cube">
+                                <span>晶圓86.67%、其他13.33%(2019年)4564564564654564654564564564564564456465456456456456</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6">
+
+                    {{-- 副標 --}}
+                    <div class="row company-title">
+                        <div class="col-12 ">
+                            <div class="title-Cube">
+                                <span>股東會及最近一年配股</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- 內容 --}}
+                    <div class="row content">
+                        <div class="col-4 company-SubTitle">
+                            <div class="Cube">
+                                <span>現金股利</span>
+                            </div>
+                        </div>
+                        <div class="col-8 company-content">
+                            <div class="Cube">
+                                <span>9.50元</span>
+                            </div>
+                        </div>
+                        <div class="col-4 company-SubTitle">
+                            <div class="Cube">
+                                <span>股東會日期</span>
+                            </div>
+                        </div>
+                        <div class="col-8 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                        <div class="col-4 company-SubTitle">
+                            <div class="Cube">
+                                <span>公積配股</span>
+                            </div>
+                        </div>
+                        <div class="col-8 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                        <div class="col-4 company-SubTitle">
+                            <div class="Cube">
+                                <span>盈餘配股</span>
+                            </div>
+                        </div>
+                        <div class="col-8 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                        <div class="col-4 company-SubTitle">
+                            <div class="Cube">
+                                <span>股票股利</span>
+                            </div>
+                        </div>
+                        <div class="col-8 company-content">
+                            <div class="Cube">
+                                <span>109/06/09</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- 最新一季獲利能力 -->
+            <div class="row ">
+                <div class="col-4">
+
+                    {{-- 副標 --}}
+                    <div class="row company-title">
+                        <div class="col-12">
+                            <div class="title-Cube">
+                                <span class="">最新一季獲利能力</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- 內容 --}}
+                    <div class="row content">
+                        <div class="col-6 company-SubTitle">
+                            <div class="Cube">
+                                <span>營業毛利率</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-content">
+                            <div class="Cube">
+                                <span>50.50%</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-SubTitle">
+                            <div class="Cube">
+                                <span>營業利益率</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-SubTitle">
+                            <div class="Cube">
+                                <span>稅前淨利率</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-SubTitle">
+                            <div class="Cube">
+                                <span>資產報酬率</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+
+                    {{-- 副標 --}}
+                    <div class="row company-title ">
+                        <div class="col-12">
+                            <div class="title-Cube">
+                                <span class="">最新四季每股盈餘</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- 內容 --}}
+                    <div class="row content">
+                        <div class="col-6 company-SubTitle">
+                            <div class="Cube">
+                                <span>第1季</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-SubTitle">
+                            <div class="Cube">
+                                <span>第2季</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-SubTitle">
+                            <div class="Cube">
+                                <span>第3季</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-SubTitle">
+                            <div class="Cube">
+                                <span>第4季</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+
+                    {{-- 副標 --}}
+                    <div class="row company-title">
+                        <div class="col-12">
+                            <div class="title-Cube">
+                                <span class="">最近四年每股盈餘</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- 內容 --}}
+                    <div class="row content">
+                        <div class="col-6 company-SubTitle">
+                            <div class="Cube">
+                                <span>107年</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-SubTitle">
+                            <div class="Cube">
+                                <span>106年</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-SubTitle">
+                            <div class="Cube">
+                                <span>105年</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-SubTitle">
+                            <div class="Cube">
+                                <span>104年</span>
+                            </div>
+                        </div>
+                        <div class="col-6 company-content">
+                            <div class="Cube">
+                                <span>-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- 除 權 息 資 料 -->
+            <div class="row ">
+                <div class="col-8">
+
+                    {{-- 副標 --}}
+                    <div class="row company-title">
+                        <div class="col-12">
+                            <div class="title-Cube">
+                                <span class="">除 權 息 資 料</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- 內容 --}}
+                    <div class="row content">
+                        <div class="col-3 company-SubTitle">
+                            <div class="Cube">
+                                <span>除權日期</span>
+                            </div>
+                        </div>
+                        <div class="col-3 company-content">
+                            <div class="Cube">
+                                <span>109/06/09</span>
+                            </div>
+                        </div>
+                        <div class="col-3 company-SubTitle">
+                            <div class="Cube">
+                                <span>除息日期</span>
+                            </div>
+                        </div>
+                        <div class="col-3 company-content">
+                            <div class="Cube">
+                                <span>109/06/09</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="news-content">
+            <table id="example" class="table table-striped table-bordered " style="width:100%">
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>新聞</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="Cube">
+                                2020/03/20
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="Cube-content">
+                                達陣台積電2日填息達《半導體》台積達陣台積電2日填息達《半導體》台積達陣台積電2日填息達《半導體》台積達陣台積電2日填息達《半導體》台積
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Cube">
+                                2020/03/20
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="Cube-content">
+                                《半導體》台積電2日填息達陣
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Cube">
+                                2020/03/20
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="Cube-content">
+                                《半導體》台積電2日填息達陣
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Cube">
+                                2020/03/20
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="Cube-content">
+                                《半導體》台積電2日填息達陣
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Cube">
+                                2020/03/20
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="Cube-content">
+                                《半導體》台積電2日填息達陣
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Cube">
+                                2020/03/20
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="Cube-content">
+                                《半導體》台積電2日填息達陣
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Cube">
+                                2020/03/20
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="Cube-content">
+                                《半導體》台積電2日填息達陣
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Cube">
+                                2020/03/20
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="Cube-content">
+                                《半導體》台積電2日填息達陣
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Cube">
+                                2020/03/20
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="Cube-content">
+                                《半導體》台積電2日填息達陣
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Cube">
+                                2020/03/20
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="Cube-content">
+                                《半導體》台積電2日填息達陣
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Cube">
+                                2020/03/20
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="Cube-content">
+                                《半導體》台積電2日填息達陣
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="historical-stock-content">
+            <div class="row company-title d-flex justify-content-center">
+                <div class="col-3">
+                    <div class="Cube">
+                        <input type="date">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="Cube">
+                        <input type="date">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
 </section>
 
+@endsection
+
+@section('js')
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function () {
+            $('#example').DataTable({
+                "language": {
+                    "lengthMenu": "顯示 _MENU_ 比資料",
+                    "zeroRecords": "抱歉 找不到此筆資料",
+                    "info": "目前第 _PAGE_ 頁 總共 _PAGES_ 頁",
+                    "infoEmpty": "",
+                    "infoFiltered": "",
+                    "search": "搜索 :",
+                    "paginate": {
+                        "first": "First",
+                        "last": "Last",
+                        "next": "下一頁",
+                        "previous": "上一頁",
+                    },
+
+                },
+            });
+        });
+
+    $('#basic-information').click( function (){
+        $('#basic-information-content').css("display","block");
+        $('#news-content').css("display","none");
+        $('#historical-stock-content').css("display","none");
+    });
+    $('#news').click( function (){
+        $('#basic-information-content').css("display","none");
+        $('#news-content').css("display","block");
+        $('#historical-stock-content').css("display","none");
+    });
+    $('#historical-stock').click( function (){
+        console.log("aaa");
+        $('#basic-information-content').css("display","none");
+        $('#news-content').css("display","none");
+        $('#historical-stock-content').css("display","block");
+    });
+</script>
 @endsection

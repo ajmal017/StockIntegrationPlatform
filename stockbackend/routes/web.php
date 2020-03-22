@@ -15,8 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontController@index');
 Route::get('/basic_info', 'FrontController@basic_info');
-Route::get('/news', 'FrontController@news');
-Route::get('/history', 'FrontController@history');
 
 
 
