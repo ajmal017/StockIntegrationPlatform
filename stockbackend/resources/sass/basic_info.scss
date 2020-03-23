@@ -78,5 +78,19 @@
         }
       }
     }
+
+    #analysis-content {
+        display: none;
+        .company-title {
+          @include MarginHigth();
+          .Cube {
+            input {
+              font-size: $text3;
+              @include Cube($text3, $color2, $color3);
+              border: 0;
+            }
+          }
+        }
+    }
   }
 }

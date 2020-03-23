@@ -1,4 +1,5 @@
 from pandas_datareader import data as pdr
+import sys
 import yfinance as yf
 import pandas as pd
 import json
@@ -6,9 +7,10 @@ import json
 
 yf.pdr_override()  # <== that's all it takes :-)
 
-download dataframe
-data = pdr.get_data_yahoo("2317.TW", start="2019-01-01", end="2020-03-18")
+# download dataframe
+# data = pdr.get_data_yahoo("2330.TW", start="2019-01-01", end="2020-03-01")
 
+data = pdr.get_data_yahoo(sys.argv[1], start=sys.argv[2], end=sys.argv[3])
 
 #時間格式重組
 time=data.index
@@ -31,11 +33,7 @@ for vel,index in enumerate(data['Close']):      #在陣列 第vel比 加入鍵�
     newData[vel]['c'] = str(index)
 
 data= json.dumps(newData)
-print(test)
-
-
-
-
+print(data)
 
 
 # 有交易與未交易的比較圖
