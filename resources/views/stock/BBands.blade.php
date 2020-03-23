@@ -70,7 +70,7 @@
 
             datasets: [
                 {
-                    label: '蠟燭圖',
+                    label: '每日股價',
                     data: res[3],
                     type: 'candlestick',
                 },
@@ -80,23 +80,25 @@
                     fill:false,
                     pointRadius: 0,
 
+                    borderColor: "blue",
                 },
                 {
                     label: '中軌',
                     data: res[0].midBBand,
                     fill:false,
                     pointRadius: 0,
+                    borderColor: "blue",
                 },
                 {
                     label: '下軌',
                     data: res[0].downBBand,
                     fill:false,
                     pointRadius: 0,
+                    borderColor: "blue",
                 },
             ],
-            labels: res[4],
-        },
-
+            labels: ['2019-01-01','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']
+        }
 
     });
 
@@ -110,17 +112,19 @@
 
             datasets: [
                 {
-                    label: 'tradecum',
+                    label: '累積交易報酬',
                     data: res[2].tradecum,
                     fill:false,
                     pointRadius: 0,
+                    borderColor: "green",
 
                 },
                 {
-                    label: 'notradecum',
+                    label: '隔日沖交易報酬',
                     data: res[2].notradecum,
                     fill:false,
                     pointRadius: 0,
+                    borderColor: "black",
                 },
             ],
             labels: res[4],
