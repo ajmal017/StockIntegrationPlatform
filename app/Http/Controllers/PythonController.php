@@ -73,7 +73,7 @@ class PythonController extends Controller
     {
 
         $jsondata= shell_exec("python python/test_v1.py");
-
+    
         $st_word = stripos($jsondata, "completed") + 9;
 
         $data = json_decode(substr($jsondata, $st_word));
