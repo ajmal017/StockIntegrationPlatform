@@ -5,23 +5,26 @@
 @endsection
 
 @section('content')
-<section class="container-all d-flex align-items-center">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="search-box col-4">
-                <h1>輕鬆投</h1>
-                <h3>智能投資</h3>
-                <div class="col-12 form-group flex-column">
-                    <form action="/basic_info">
-                        <input id="checkID" type="text" class="form-control search-form border-0" placeholder="股票代碼">
-                        <span id="test_result" class="d-flex justify-content-center"></span>
-                    </form>
+<div id="app">
+    <section class="container-all d-flex align-items-center">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="search-box col-4">
+                    <h1>輕鬆投</h1>
+                    <h3>智能投資</h3>
+                    <div class="col-12 form-group flex-column">
+                        <form action="/basic_info">
+                            {{-- <input id="checkID" type="text" class="form-control search-form border-0" placeholder="股票代碼"> --}}
+                            {{-- <span id="test_result" class="d-flex justify-content-center"></span> --}}
+                            <index-select></index-select>
+                        </form>
+                    </div>
+                    <span class="pb-3 d-flex justify-content-center">輕鬆分析，聰明投資</span>
                 </div>
-                <span class="pb-3 d-flex justify-content-center">輕鬆分析，聰明投資</span>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 @endsection
 
 
