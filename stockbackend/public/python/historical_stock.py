@@ -23,7 +23,7 @@ newData=[]
                                                 #特別注意鍵值名稱要與圖表命名規則相同
 for vel,time in enumerate(time22):              #將陣列加入第一筆字典資料time
     newData += [{"t":str(time)}]
-for vel,index in enumerate(data['Open']):       #在陣列 第vel比 加入鍵值Opne 並將值轉為字串
+for vel,index in enumerate(data['Open']):       #在陣列 第vel比 加入鍵值Open 並將值轉為字串
     newData[vel]['o'] = str(index)
 for vel,index in enumerate(data['High']):       #在陣列 第vel比 加入鍵值High 並將值轉為字串
     newData[vel]['h'] = str(index)

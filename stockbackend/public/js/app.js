@@ -1957,6 +1957,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -1965,32 +1966,49 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       value: {
-        name: "股票代碼",
-        language: "JavaScript"
+        name: "股票代碼"
       },
-      options: [{
-        name: "Vue.js",
-        language: "JavaScript"
-      }, {
-        name: "Rails",
-        language: "Ruby"
-      }, {
-        name: "Sinatra",
-        language: "Ruby"
-      }, {
-        name: "Laravel",
-        language: "PHP"
-      }, {
-        name: "Phoenix",
-        language: "Elixir"
-      }]
+      options: [//   { name: 'Vue.js', language: 'JavaScript' },
+      ]
     };
   },
+  mounted: function mounted() {
+    this.json_get_local_file();
+  },
   methods: {
-    nameWithLang: function nameWithLang(_ref) {
-      var name = _ref.name,
-          language = _ref.language;
-      return "".concat(name, " \u2014 [").concat(language, "]");
+    //載入stock.json
+    json_get_local_file: function json_get_local_file() {
+      var _this = this;
+
+      axios.get("/js/stockid.json", {}).then(function (response) {
+        _this.stockids = response.data;
+        var s = _this.stockids.id; // console.log(s);
+
+        var name_ary = [];
+        s.forEach(function (element) {
+          var name_object = new Object();
+          name_object.name = element;
+          name_ary.push(name_object);
+        });
+        _this.options = name_ary;
+      });
+    },
+    changestockid: function changestockid() {
+      //捉取畫面股票代碼，帶入basic_info畫面
+      var tartget = this.value.name; //tartget：股票代碼
+
+      window.location.assign("/basic_info/".concat(tartget)); //axios作法，無法跳頁面，需要另要改方法
+      //     let tartget = this.value.name
+      //   axios
+      //     .post("/ajax/checkID",{
+      //         id:tartget
+      //     })
+      //     .then((res)=>{
+      //         console.log(res);
+      //     })
+      //     .catch((res)=>{
+      //         console.log(res);
+      //     });
     }
   }
 }); // export default {
@@ -37429,9 +37447,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("label", { staticClass: "typo__label" }, [
-        _vm._v("Select with search")
-      ]),
+      _c("label", { staticClass: "typo__label" }, [_vm._v("股票代碼")]),
       _vm._v(" "),
       _c("multiselect", {
         attrs: {
@@ -37440,6 +37456,11 @@ var render = function() {
           placeholder: "Select one",
           label: "name",
           "track-by": "name"
+        },
+        on: {
+          input: function($event) {
+            return _vm.changestockid(_vm.value)
+          }
         },
         model: {
           value: _vm.value,
@@ -49785,15 +49806,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************************!*\
   !*** ./resources/js/components/IndexSelect.vue ***!
   \*************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _IndexSelect_vue_vue_type_template_id_33060f5a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./IndexSelect.vue?vue&type=template&id=33060f5a& */ "./resources/js/components/IndexSelect.vue?vue&type=template&id=33060f5a&");
 /* harmony import */ var _IndexSelect_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IndexSelect.vue?vue&type=script&lang=js& */ "./resources/js/components/IndexSelect.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _IndexSelect_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _IndexSelect_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -49823,7 +49843,7 @@ component.options.__file = "resources/js/components/IndexSelect.vue"
 /*!**************************************************************************!*\
   !*** ./resources/js/components/IndexSelect.vue?vue&type=script&lang=js& ***!
   \**************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
