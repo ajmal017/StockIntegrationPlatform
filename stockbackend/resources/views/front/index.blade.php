@@ -31,42 +31,42 @@
 
 @section('js')
 <script>
-    $(document).ready(function() {
+    // $(document).ready(function() {
 
-        $('#checkID').change(function(){
-            var ID;
-            ID = $('#checkID').val();
+    //     $('#checkID').change(function(){
+    //         var ID;
+    //         ID = $('#checkID').val();
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+    //         $.ajaxSetup({
+    //             headers: {
+    //                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //             }
+    //         });
 
-            $.ajax({
-                method: 'GET',
-                url: '/ajax/checkID',
-                contentType: false,
-                cache: false,
-                processData: false,
-                // data: ,
-                success: function (res) {
-                    if (res == true) {
-                        $("#test_result").text("請輸入Enter查詢");
-                        $("#test_result").css("color","#41c44e");
+    //         $.ajax({
+    //             method: 'GET',
+    //             url: '/ajax/checkID',
+    //             contentType: false,
+    //             cache: false,
+    //             processData: false,
+    //             // data: ,
+    //             success: function (res) {
+    //                 if (res == true) {
+    //                     $("#test_result").text("請輸入Enter查詢");
+    //                     $("#test_result").css("color","#41c44e");
 
-                    } else {
-                        $("#test_result").text("查無此代碼");
-                        $("#test_result").css("color","#41c44e");
-                    }
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.error(textStatus + " " + errorThrown);
-                }
-            });
+    //                 } else {
+    //                     $("#test_result").text("查無此代碼");
+    //                     $("#test_result").css("color","#41c44e");
+    //                 }
+    //             },
+    //             error: function (jqXHR, textStatus, errorThrown) {
+    //                 console.error(textStatus + " " + errorThrown);
+    //             }
+    //         });
 
-        });
-    });
+    //     });
+    // });
 
 
 

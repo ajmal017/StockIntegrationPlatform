@@ -11,31 +11,11 @@ class FrontController extends Controller
         return view('front/index');
     }
 
-    public function stock_ID_check(Request $request)
-    {
-        $id = $request->all();
 
-        if($id) {
-            //比對資料庫是否有這支股票
-            $result = true;
-        }
-        else {
-            $result = false;
-        };
-
-
-        return $result;
-    }
-
-    // public function basic_info(Request $request)
-    // {
-    //     return view('front/basic_info');
-    // }
-
-    public function basic_info()
+    public function basic_info($id)
     {
 
-        $no = "2330.TW";
+        $no = $id.'.TW';
         $begin_dt = "2019-01-01";
         $end_dt = "2019-01-30";
 
@@ -58,12 +38,6 @@ class FrontController extends Controller
 
         //******************************************************************************* */
 
-
-
-        // $jsonbasic = shell_exec("python python/basic_info.py");
-        // // dd($jsonbasic);
-        // $data_basic = json_decode($jsonbasic);
-        // dd($data_basic);
         return view('front/basic_info', compact('data_news','data','data_backtest'));
     }
 

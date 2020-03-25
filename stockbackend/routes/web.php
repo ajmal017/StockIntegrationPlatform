@@ -14,27 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'FrontController@index');
-Route::get('/ajax/checkID', 'FrontController@stock_ID_check');
+Route::get('/basic_info/{id}', 'FrontController@basic_info');
 
-// Route::get('/basic_info', 'FrontController@basic_info');
-// Route::post('/basic_info', 'PythonController@historical_stock');
+// Route::post('/ajax/checkID', 'FrontController@stock_ID_check');
 
-Route::get('/basic_info', 'FrontController@basic_info');
 
 // Route::get('/basic_info', 'FrontController@historical_stock');
-
-
 // Route::get('/stock', 'FrontController@stock');
-
-
 // Route::get('/bband', 'PythonController@bband'); //布林通道
-
-
 // //發財通道
 // Route::get('/BBands', 'PythonController@BBands');
 
 
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
