@@ -37447,8 +37447,6 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("label", { staticClass: "typo__label" }, [_vm._v("股票代碼")]),
-      _vm._v(" "),
       _c("multiselect", {
         attrs: {
           options: _vm.options,
@@ -49922,11 +49920,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\user\Documents\Github\StockIntegrationPlatform\stockbackend\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\user\Documents\Github\StockIntegrationPlatform\stockbackend\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\Users\user\Documents\Github\StockIntegrationPlatform\stockbackend\resources\sass\nav.scss */"./resources/sass/nav.scss");
-__webpack_require__(/*! C:\Users\user\Documents\Github\StockIntegrationPlatform\stockbackend\resources\sass\index.scss */"./resources/sass/index.scss");
-module.exports = __webpack_require__(/*! C:\Users\user\Documents\Github\StockIntegrationPlatform\stockbackend\resources\sass\basic_info.scss */"./resources/sass/basic_info.scss");
+__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\nav.scss */"./resources/sass/nav.scss");
+__webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\index.scss */"./resources/sass/index.scss");
+module.exports = __webpack_require__(/*! C:\Users\user\Documents\GitHub\StockIntegrationPlatform\stockbackend\resources\sass\basic_info.scss */"./resources/sass/basic_info.scss");
 
 
 /***/ })

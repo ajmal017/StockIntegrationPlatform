@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label class="typo__label">股票代碼</label>
+
     <multiselect
       v-model="value"
       :options="options"
@@ -72,7 +72,6 @@ export default {
       //         console.log(res);
       //     });
     },
-
   }
 };
 

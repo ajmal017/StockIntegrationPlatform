@@ -3,13 +3,14 @@
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="{{asset("../css/basic_info.css")}}">
+<link rel="stylesheet" href="{{asset("css/basic_info.css")}}">
 <script
 src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign"></script>
 <script src="https://cdn.jsdelivr.net/npm/luxon@1.19.3"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@0.2.0"></script>
-<script src="./js/chartjs-chart-financial.js" type="text/javascript"></script>
+<script src="{{ asset('js/historical-stock.js') }}" ></script>
+<script src="{{ asset('js/chartjs-chart-financial.js') }}" ></script>
 
 <style>
     .myChartDiv {
@@ -519,8 +520,8 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 @endsection
 
 @section('js')
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" defer></script>
 
 <script>
     var rrs = {!! json_encode($data) !!};
@@ -536,7 +537,7 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
     });
 
 
-    console.log(rrs)
+    // console.log(rrs)
 
     var ctx = document.getElementById('chart').getContext('2d');
     ctx.canvas.width = 1000;
@@ -558,7 +559,7 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
 <script>
     var win = document.querySelector('#win');
     var res = {!! json_encode($data_backtest) !!};
-    console.log(res);
+    // console.log(res);
     win.innerHTML +=
                     `
                     <span>勝率:${res[1].winRate}</span>
@@ -570,7 +571,7 @@ src="https://cdn.polyfill.io/v2/polyfill.js?features=default,String.prototype.re
         newDate = luxon.DateTime.fromRFC2822(element.t)
         res[3][index].t = newDate.valueOf()
     });
-    console.log(res[3]);
+    // console.log(res[3]);
     var ctx = document.getElementById('Chart_bband').getContext('2d');
     ctx.canvas.width = 1000;
     ctx.canvas.height = 250;
